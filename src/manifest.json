@@ -2,13 +2,13 @@
   "manifest_version": 2,
   "name": "Webpack Chrome Extension Reloader Sample",
   "version": "0.1",
+  "browser_action": {
+    "default_popup": "index.html"
+  },
   "background": {
     "scripts": [
       "background.js"
     ]
-  },
-  "page_action": {
-    "default_popup": "popup.html"
   },
   "content_scripts": [
     {
