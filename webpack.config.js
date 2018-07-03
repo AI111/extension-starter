@@ -18,14 +18,14 @@ module.exports = {
     },
     plugins: [
         //We check the NODE_ENV for the "development" value to include the plugin
-        process.env.NODE_ENV === "development"? new WebpackChromeReloaderPlugin({
+         new WebpackChromeReloaderPlugin({
             port: 9090, // Which port use to create the server
             reloadPage: true, // Force the reload of the page also
             entries: { //The entries used for the content/background scripts
                 contentScript: 'content-script', //Use the entry names, not the file name or the path
                 background: 'background'
             }
-        }) : null,
+        }),
 
         new ExtractTextPlugin({filename: "style.css"}),
         new CopyWebpackPlugin([{from: "./src/some-asset.txt", flatten: true}]),
